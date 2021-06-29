@@ -16,7 +16,7 @@ class _VirtualMaterialScreen3State extends State<VirtualMaterialScreen3> {
   }
 
   // double currentIndex = 0;
-  // List<String> items = ['assets/images/image.png'];
+  // List<String> items = ['assets/images/Image1.png'];
 
   // Widget slider() {
   //   return CarouselSlider(
@@ -131,29 +131,25 @@ class _VirtualMaterialScreen3State extends State<VirtualMaterialScreen3> {
                               Padding(
                                 padding: const EdgeInsets.only(left: 30),
                                 child: Container(
-                                    height: 240,
-
+                                  height: 240,
                                   decoration: BoxDecoration(
-                                  color: AppTheme().white,
-                                         borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(15),
-                                    topLeft: Radius.circular(15),
-                                    
-                                  )
-                                  ),
-                                    width: MediaQuery.of(context).size.width,
-
+                                      color: AppTheme().white,
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(15),
+                                        topLeft: Radius.circular(15),
+                                      )),
+                                  width: MediaQuery.of(context).size.width,
                                   child: Container(
                                     height: 240,
                                     decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage('assets/images/image.png'),
-                                      )
-                                    ),
+                                        image: DecorationImage(
+                                      image: AssetImage(
+                                          'assets/images/image2.png'),
+                                    )),
                                   ),
                                 ),
                               ),
-                                // child: Image(image: AssetImage('assets/images/image.png'),))
+                              // child: Image(image: AssetImage('assets/images/Image1.png'),))
 
                               // Padding(
                               //   padding: const EdgeInsets.only(left: 35),
@@ -163,7 +159,7 @@ class _VirtualMaterialScreen3State extends State<VirtualMaterialScreen3> {
                               //     borderRadius: BorderRadius.only(
                               //       bottomLeft: Radius.circular(15),
                               //       topLeft: Radius.circular(15),
-                                    
+
                               //     )
                               //     ),
                               //     height: 200,

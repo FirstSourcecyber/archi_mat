@@ -305,13 +305,13 @@ class _UserHomeState extends State<UserHome> {
   }
 
   List photos = [
-    'assets/images/Image.png',
+    'assets/images/Image1.png',
     'assets/images/Image1.png',
     'assets/images/virtual.png',
-    'assets/images/Image.png',
+    'assets/images/Image1.png',
     'assets/images/Image1.png',
     'assets/images/virtual.png',
-    'assets/images/Image.png',
+    'assets/images/Image1.png',
     'assets/images/Image1.png',
     'assets/images/virtual.png',
   ];
@@ -330,7 +330,7 @@ class _UserHomeState extends State<UserHome> {
               // color: Colors.green,
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
-                  image: AssetImage('assets/images/Image.png'),
+                  image: AssetImage('assets/images/Image1.png'),
                   fit: BoxFit.cover)),
           // child: new Center(
           //   child: new CircleAvatar(
