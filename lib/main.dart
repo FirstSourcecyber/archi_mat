@@ -1,4 +1,5 @@
 import 'package:archi_mat/onboarding/splash.dart';
+import 'package:archi_mat/pages/tab.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,8 +25,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: TabPage(
+        index: 0,
+      ),
     );
   }
 }
-

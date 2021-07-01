@@ -1,6 +1,9 @@
-import 'dart:convert';
+// import 'dart:convert';
 import 'package:archi_mat/auth/getStarted.dart';
-import 'package:archi_mat/customerdashboard/userhome.dart';
+// import 'package:archi_mat/businessdashboard/userhome.dart';
+import 'package:archi_mat/browseMaterial/browseMaterail.dart';
+import 'package:archi_mat/pages/homepage.dart';
+import 'package:archi_mat/pages/tab.dart';
 import 'package:flutter/material.dart';
 import 'package:archi_mat/theme.dart';
 
@@ -35,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     child: Container(
                       alignment: Alignment.topCenter,
                       child: Image(
-                        image: AssetImage('assets/images/archimat_logo.png'),
+                        image: AssetImage('assets/images/archimatlogo.png'),
                         fit: BoxFit.cover,
                         // height: 160,
                         width: 180,
@@ -77,7 +80,8 @@ class _SplashScreenState extends State<SplashScreen> {
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).pushAndRemoveUntil(
-                            MaterialPageRoute(builder: (context) => UserHome()),
+                            MaterialPageRoute(
+                                builder: (context) => GetStartedScreen()),
                             (Route<dynamic> route) => false);
                       },
                       child: Container(

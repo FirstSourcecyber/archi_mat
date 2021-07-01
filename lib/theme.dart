@@ -12,9 +12,11 @@ class AppTheme {
   Color whiteopacity = Colors.white.withOpacity(0.5);
   Color whiteopacity1 = Colors.white.withOpacity(0.8);
   Color grey = Colors.grey;
+  Color lightgrey = Colors.grey[200];
   Color purple = Color(0xFFA12791);
+  Color pink = Colors.pink;
   Color getstartedbg = Color(0xFF708491);
-
+  Color lightblue = Colors.blue[50];
   Color yellow = Colors.yellow;
   Color loginBtnColor = Color(0xFFB7B7B7);
   Color virtualbg = Color(0xFF907070);

@@ -1,17 +1,21 @@
+import 'package:archi_mat/businessdashboard/businessprofile.dart';
+import 'package:archi_mat/businessdashboard/inbox.dart';
+import 'package:archi_mat/businessdashboard/list/arlist.dart';
+import 'package:archi_mat/businessdashboard/list/photolistgrid.dart';
 import 'package:flutter/material.dart';
 import 'package:archi_mat/theme.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
-class UserHome extends StatefulWidget {
-  const UserHome({Key key}) : super(key: key);
+class BusinessHome extends StatefulWidget {
+  const BusinessHome({Key key}) : super(key: key);
 
   @override
-  _UserHomeState createState() => _UserHomeState();
+  _BusinessHomeState createState() => _BusinessHomeState();
 }
 
-class _UserHomeState extends State<UserHome> {
+class _BusinessHomeState extends State<BusinessHome> {
   int i = 0;
   @override
   Widget build(BuildContext context) {
@@ -40,7 +44,10 @@ class _UserHomeState extends State<UserHome> {
                 FontAwesomeIcons.facebookMessenger,
                 color: Colors.black,
               ),
-              onPressed: null)
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Inbox()));
+              })
         ],
       ),
       body: SingleChildScrollView(
@@ -83,9 +90,17 @@ class _UserHomeState extends State<UserHome> {
                     bottom: 50,
                     width: MediaQuery.of(context).size.width,
                     child: Center(
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage('assets/images/mask.png'),
-                        radius: 50,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => BusinessProfile()));
+                        },
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage('assets/images/mask.png'),
+                          radius: 50,
+                        ),
                       ),
                     ))
               ],
@@ -119,17 +134,25 @@ class _UserHomeState extends State<UserHome> {
                       )
                     ],
                   ),
-                  Column(
-                    children: [
-                      Text('763'),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        'Following',
-                        style: TextStyle(color: AppTheme().l1black),
-                      )
-                    ],
+                  InkWell(
+                    onTap: () {
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => BusinessProfile()));
+                    },
+                    child: Column(
+                      children: [
+                        Text('763'),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Following',
+                          style: TextStyle(color: AppTheme().l1black),
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),
@@ -289,7 +312,8 @@ class _UserHomeState extends State<UserHome> {
                     height: 20,
                   ),
                   i == 0
-                      ? getcollection()
+                      ? PhotoListGride()
+                      //  getcollection()
                       : i == 1
                           ? getvitual()
                           : i == 2
@@ -438,220 +462,7 @@ class _UserHomeState extends State<UserHome> {
             )
           ],
         ),
-        // Stack(
-        //   alignment: Alignment.center,
-        //   children: [
-        //     Container(
-        //       width: 270,
-        //       height: 400,
-        //       decoration: BoxDecoration(
-        //           borderRadius: BorderRadius.circular(30),
-        //           image: DecorationImage(
-        //               image: AssetImage('assets/images/Rectangle.png'),
-        //               fit: BoxFit.cover)),
-        //     ),
-        //     Positioned(top: 20, left: 20, child: Text('AR')),
-        //     Positioned(
-        //         bottom: 0,
-        //         child: Container(
-        //           width: 220,
-        //           height: 180,
-        //           decoration: BoxDecoration(
-        //               color: AppTheme().whiteopacity,
-        //               borderRadius: BorderRadius.circular(30)),
-        //           child: Padding(
-        //             padding: const EdgeInsets.all(20.0),
-        //             child: Column(
-        //               crossAxisAlignment: CrossAxisAlignment.start,
-        //               children: [
-        //                 Text(
-        //                   'Mossimom Sofa',
-        //                   style: TextStyle(color: AppTheme().l1black),
-        //                 ),
-        //                 SizedBox(
-        //                   height: 10,
-        //                 ),
-        //                 Row(
-        //                   children: [
-        //                     Icon(
-        //                       FontAwesomeIcons.clock,
-        //                       color: AppTheme().yellowdark,
-        //                     ),
-        //                     Text(
-        //                       '   Teck Yew, Singapore',
-        //                       style: TextStyle(color: AppTheme().lblack),
-        //                     )
-        //                   ],
-        //                 ),
-        //                 SizedBox(
-        //                   height: 20,
-        //                 ),
-        //                 Row(
-        //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //                   children: [
-        //                     Container(
-        //                       width: 50,
-        //                       height: 60,
-        //                       decoration: BoxDecoration(
-        //                           borderRadius: BorderRadius.circular(15),
-        //                           color: AppTheme().whiteopacity1),
-        //                       child: Icon(FontAwesomeIcons.safari),
-        //                     ),
-        //                     Container(
-        //                       width: 70,
-        //                       height: 60,
-        //                       decoration: BoxDecoration(
-        //                           borderRadius: BorderRadius.circular(15),
-        //                           color: AppTheme().whiteopacity1),
-        //                       child: Row(
-        //                         children: [
-        //                           Icon(
-        //                             FontAwesomeIcons.star,
-        //                             color: AppTheme().yellowdark,
-        //                           ),
-        //                           Text(' New')
-        //                         ],
-        //                       ),
-        //                     ),
-        //                     Container(
-        //                       width: 50,
-        //                       height: 60,
-        //                       decoration: BoxDecoration(
-        //                           borderRadius: BorderRadius.circular(15),
-        //                           color: AppTheme().whiteopacity1),
-        //                       child: Icon(
-        //                         FontAwesomeIcons.bookmark,
-        //                         color: AppTheme().yellowdark,
-        //                       ),
-        //                     ),
-        //                   ],
-        //                 )
-        //               ],
-        //             ),
-        //           ),
-        //         ))
-        //   ],
-        // ),
-        // SizedBox(
-        //   height: 20,
-        // ),
-        Container(
-          height: 450,
-          child:
-              // loader
-              //     ? Center(child: CircularProgressIndicator())
-              //     :
-              ListView.builder(
-            // padding:
-            //     const EdgeInsets.only(top: 5, right: 16, left: 16, bottom: 5),
-            itemCount: 4,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      width: 270,
-                      height: 400,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/Rectangle.png'),
-                              fit: BoxFit.cover)),
-                    ),
-                    Positioned(top: 20, left: 20, child: Text('AR')),
-                    Positioned(
-                        bottom: 0,
-                        child: Container(
-                          width: 220,
-                          height: 180,
-                          decoration: BoxDecoration(
-                              color: AppTheme().whiteopacity,
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Mossimom Sofa',
-                                  style: TextStyle(color: AppTheme().l1black),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      FontAwesomeIcons.clock,
-                                      color: AppTheme().yellowdark,
-                                    ),
-                                    Text(
-                                      '   Teck Yew, Singapore',
-                                      style:
-                                          TextStyle(color: AppTheme().lblack),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      width: 50,
-                                      height: 60,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          color: AppTheme().whiteopacity1),
-                                      child: Icon(FontAwesomeIcons.safari),
-                                    ),
-                                    Container(
-                                      width: 70,
-                                      height: 60,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          color: AppTheme().whiteopacity1),
-                                      child: Row(
-                                        children: [
-                                          Icon(
-                                            FontAwesomeIcons.star,
-                                            color: AppTheme().yellowdark,
-                                          ),
-                                          Text(' New')
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 50,
-                                      height: 60,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          color: AppTheme().whiteopacity1),
-                                      child: Icon(
-                                        FontAwesomeIcons.bookmark,
-                                        color: AppTheme().yellowdark,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ))
-                  ],
-                ),
-              );
-            },
-          ),
-        ),
+        ArList()
       ],
     );
   }
