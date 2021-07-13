@@ -247,11 +247,10 @@ class _TabPageState extends State<TabPage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.purple,
-        child: Image(
-          image: AssetImage(
-            'assets/images/add.png',
-          ),
-          width: 30,
+        child: SvgPicture.asset(
+          'assets/images/floatlogo.svg',
+          width: 20,
+          color: AppTheme().white,
         ),
         onPressed: () {
           this.setState(() {
@@ -270,49 +269,72 @@ class _TabPageState extends State<TabPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Column(
-                children: <Widget>[
-                  SvgPicture.asset(
-                    'assets/images/home.svg',
-                    width: 20,
-                  ),
-                  // IconButton(
-                  //   icon: Icon(
-                  //     Icons.home,
-                  //     size: 30,
-                  //     color: _page == 0 ? AppTheme().purple : AppTheme().grey,
-                  //   ),
-                  //   onPressed: () {
-                  //     this.setState(() {
-                  //       _page = 0;
-                  //     });
-                  //   },
-                  // ),
-                  Text(
-                    'Home',
-                    style: TextStyle(
+              InkWell(
+                onTap: () {
+                  this.setState(() {
+                    _page = 0;
+                  });
+                },
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 1, bottom: 3),
+                      child: SvgPicture.asset(
+                        'assets/images/home.svg',
+                        width: 25,
                         color: _page == 0 ? AppTheme().purple : AppTheme().grey,
-                        fontSize: 12),
-                  )
-                ],
+                      ),
+                    ),
+                    // IconButton(
+                    //   icon: Icon(
+                    //     Icons.home,
+                    //     size: 30,
+                    //     color: _page == 0 ? AppTheme().purple : AppTheme().grey,
+                    //   ),
+                    //   onPressed: () {
+                    //     this.setState(() {
+                    //       _page = 0;
+                    //     });
+                    //   },
+                    // ),
+                    Text(
+                      'Home',
+                      style: TextStyle(
+                          color:
+                              _page == 0 ? AppTheme().purple : AppTheme().grey,
+                          fontSize: 12),
+                    )
+                  ],
+                ),
               ),
-              Column(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: SvgPicture.asset(
-                      'assets/images/category.svg',
-                      width: 20,
+              InkWell(
+                onTap: () {
+                  this.setState(() {
+                    _page = 1;
+                  });
+                },
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15, bottom: 3),
+                      child: SvgPicture.asset(
+                        'assets/images/category.svg',
+                        width: 25,
+                        color: _page == 1 ? AppTheme().purple : AppTheme().grey,
+                      ),
                     ),
-                  ),
-                  Text(
-                    'Category',
-                    style: TextStyle(
-                      color: _page == 1 ? AppTheme().purple : AppTheme().grey,
-                      fontSize: 12,
-                    ),
-                  )
-                ],
+                    Text(
+                      'Category',
+                      style: TextStyle(
+                        color: _page == 1 ? AppTheme().purple : AppTheme().grey,
+                        fontSize: 12,
+                      ),
+                    )
+                  ],
+                ),
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -329,33 +351,60 @@ class _TabPageState extends State<TabPage> {
                   ),
                 ],
               ),
-              Column(
-                children: <Widget>[
-                  IconButton(
-                    icon: Icon(
-                      _page == 2 ? Icons.search : Icons.search,
-                      color: _page == 2 ? AppTheme().purple : AppTheme().grey,
-                      size: 30,
-                    ),
-                    onPressed: () {
-                      this.setState(() {
-                        _page = 2;
-                      });
-                    },
-                  ),
-                  Text(
-                    'Discover',
-                    style: TextStyle(
+              InkWell(
+                onTap: () {
+                  this.setState(() {
+                    _page = 2;
+                  });
+                },
+                child: Column(
+                  children: <Widget>[
+                    // IconButton(
+                    //   icon: Icon(
+                    //     _page == 2 ? Icons.search : Icons.search,
+                    //     color: _page == 2 ? AppTheme().purple : AppTheme().grey,
+                    //     size: 30,
+                    //   ),
+                    //   onPressed: () {
+                    //     this.setState(() {
+                    //       _page = 2;
+                    //     });
+                    //   },
+                    // ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15, bottom: 3),
+                      child: SvgPicture.asset(
+                        'assets/images/search.svg',
+                        width: 25,
                         color: _page == 2 ? AppTheme().purple : AppTheme().grey,
-                        fontSize: 12),
-                  )
-                ],
+                      ),
+                    ),
+                    Text(
+                      'Discover',
+                      style: TextStyle(
+                          color:
+                              _page == 2 ? AppTheme().purple : AppTheme().grey,
+                          fontSize: 12),
+                    )
+                  ],
+                ),
               ),
               Column(
                 children: <Widget>[
-                  SvgPicture.asset(
-                    'assets/images/mat.svg',
-                    width: 20,
+                  InkWell(
+                    onTap: () {
+                      this.setState(() {
+                        _page = 3;
+                      });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 15),
+                      child: SvgPicture.asset(
+                        'assets/images/mat.svg',
+                        width: 40,
+                        color: _page == 3 ? AppTheme().purple : AppTheme().grey,
+                      ),
+                    ),
                   ),
                   // IconButton(
                   //   icon: Icon(
@@ -369,12 +418,12 @@ class _TabPageState extends State<TabPage> {
                   //     });
                   //   },
                   // ),
-                  Text(
-                    'MAT IT',
-                    style: TextStyle(
-                        color: _page == 3 ? AppTheme().purple : AppTheme().grey,
-                        fontSize: 12),
-                  )
+                  // Text(
+                  //   'MAT IT',
+                  //   style: TextStyle(
+                  //       color: _page == 3 ? AppTheme().purple : AppTheme().grey,
+                  //       fontSize: 12),
+                  // )
                 ],
               ),
             ],

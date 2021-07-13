@@ -4,17 +4,13 @@ import 'package:archi_mat/businessdashboard/list/featured.dart';
 import 'package:archi_mat/businessdashboard/list/material.dart';
 import 'package:archi_mat/businessdashboard/list/professionallist.dart';
 import 'package:archi_mat/businessdashboard/list/shoplist.dart';
-import 'package:archi_mat/businessdashboard/userhome.dart';
 import 'package:archi_mat/pages/newfeed.dart';
-import 'package:archi_mat/pages/profile.dart';
 import 'package:archi_mat/pages/search.dart';
 import 'package:archi_mat/slider/slider.dart';
 import 'package:archi_mat/theme.dart';
 import 'package:archi_mat/util/widgets/title.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../businessdashboard/list/productlist.dart';
 
@@ -66,7 +62,7 @@ class _HomePageState extends State<HomePage> {
             child: SvgPicture.asset(
               'assets/images/menu.svg',
               color: AppTheme().l1black,
-              // width: 20,
+              width: 20,
             ),
           ),
         ),
@@ -89,7 +85,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         actions: <Widget>[
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(right: 15),
             child: SvgPicture.asset(
               'assets/images/search.svg',
               color: AppTheme().l1black,
@@ -344,7 +340,10 @@ class _HomePageState extends State<HomePage> {
                                           bottomRight: Radius.circular(5),
                                           topRight: Radius.circular(5))),
                                   child: SvgPicture.asset(
-                                      'assets/images/Filter.svg'))
+                                    'assets/images/Filter.svg',
+                                    width: 15,
+                                    color: AppTheme().grey,
+                                  ))
                             ],
                           ),
                         ),
@@ -376,6 +375,7 @@ class _HomePageState extends State<HomePage> {
               height: 20,
             ),
             CategoryList(),
+
             SizedBox(
               height: 20,
             ),

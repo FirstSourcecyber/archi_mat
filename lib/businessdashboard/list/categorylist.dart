@@ -1,6 +1,6 @@
-import 'package:archi_mat/pages/search.dart';
 import 'package:archi_mat/util/widgets/title.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../theme.dart';
 
@@ -15,14 +15,17 @@ class _CategoryListState extends State<CategoryList> {
   int i = 0;
   List category = ['All', "Tiles", "Comment", 'Furniture'];
   List material = [
-    {'image': 'assets/images/material1.png', 'name': 'Glass'},
-    {'image': 'assets/images/material.png', 'name': 'Concrete'},
-    {'image': 'assets/images/material3.png', 'name': 'Plastic'},
-    {'image': 'assets/images/material2.png', 'name': 'Laminates'},
-    {'image': 'assets/images/material1.png', 'name': 'Glass'},
-    {'image': 'assets/images/material.png', 'name': 'Concrete'},
-    {'image': 'assets/images/material3.png', 'name': 'Plastic'},
-    {'image': 'assets/images/material2.png', 'name': 'Laminates'},
+    {'image': 'assets/images/search.svg', 'name': 'Search'},
+    {'image': 'assets/images/1.svg', 'name': 'BRICK'},
+    {'image': 'assets/images/2.svg', 'name': 'WALL'},
+    {'image': 'assets/images/3.svg', 'name': 'CEILING'},
+    {'image': 'assets/images/4.svg', 'name': 'CEMENT'},
+    {'image': 'assets/images/5.svg', 'name': 'DEMOLITION'},
+    {'image': 'assets/images/1.svg', 'name': 'BRICK'},
+    {'image': 'assets/images/2.svg', 'name': 'WALL'},
+    {'image': 'assets/images/3.svg', 'name': 'CEILING'},
+    {'image': 'assets/images/4.svg', 'name': 'CEMENT'},
+    {'image': 'assets/images/5.svg', 'name': 'DEMOLITION'},
   ];
   @override
   Widget build(BuildContext context) {
@@ -65,6 +68,7 @@ class _CategoryListState extends State<CategoryList> {
                             width: 90,
                             height: 90,
                             decoration: BoxDecoration(
+                                // shape: BoxShape.circle,
                                 borderRadius: BorderRadius.circular(15),
                                 color: i == index
                                     ? AppTheme().purple
@@ -73,7 +77,7 @@ class _CategoryListState extends State<CategoryList> {
                               'assets/images/Icon.png',
                               color: i == index
                                   ? AppTheme().white
-                                  : AppTheme().grey,
+                                  : AppTheme().black,
                             ),
                             //  Icon(
                             //   Icons.cleaning_services,
@@ -86,7 +90,7 @@ class _CategoryListState extends State<CategoryList> {
                             height: 5,
                           ),
                           Text(
-                            category[index],
+                            material[index]['name'],
                             style: TextStyle(fontSize: 15, wordSpacing: 6.0),
                           ),
                         ],

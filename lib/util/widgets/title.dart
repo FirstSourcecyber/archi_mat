@@ -19,7 +19,7 @@ class Title_Widgets extends StatelessWidget {
           Text(
             this.text,
             style: TextStyle(
-                color: AppTheme().purple,
+                color: AppTheme().black,
                 fontSize: 20,
                 fontWeight:
                     this.bold == true ? FontWeight.bold : FontWeight.w500),

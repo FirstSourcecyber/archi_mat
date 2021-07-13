@@ -1,4 +1,3 @@
-import 'package:archi_mat/onboarding/splash.dart';
 import 'package:archi_mat/pages/tab.dart';
 import 'package:flutter/material.dart';
 

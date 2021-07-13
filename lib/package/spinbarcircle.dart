@@ -374,7 +374,6 @@ library spincircle_bottom_bar;
 
 import 'package:archi_mat/package/bar.dart';
 import 'package:flutter/material.dart';
-import 'package:polygon_clipper/polygon_border.dart';
 
 class SpinCircleBottomBarHolder extends StatelessWidget {
   final SCBottomBarDetails bottomNavigationBar;
@@ -471,6 +470,7 @@ class _SpinCircleBottomBarState extends State<SpinCircleBottomBar> {
         alignment: Alignment.center,
         child: Stack(
           fit: StackFit.expand,
+          // ignore: deprecated_member_use
           overflow: Overflow.visible,
           children: <Widget>[
             if (expansionStatus != ExpansionStatus.IDLE) ...[
@@ -692,6 +692,7 @@ class PrimaryCircle extends StatelessWidget {
           child: Center(
             child: Stack(
               fit: StackFit.expand,
+              // ignore: deprecated_member_use
               overflow: Overflow.visible,
               children: circleItems.asMap().entries.map((entry) {
                 SCItem value = entry.value;

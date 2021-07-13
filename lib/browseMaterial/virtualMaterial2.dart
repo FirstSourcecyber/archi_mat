@@ -1,9 +1,6 @@
-import 'dart:convert';
 import 'package:archi_mat/pages/tab.dart';
 import 'package:flutter/material.dart';
 import 'package:archi_mat/theme.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 
 class VirtualMaterialScreen3 extends StatefulWidget {
   @override
